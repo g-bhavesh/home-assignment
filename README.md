@@ -6,6 +6,6 @@ The basic CRUD routes with http methods are as follows:
 | ----------- | ----------- | ----------- | ----------- |
 | /users/	| GET	| READ|	get all users | 
 | /users/id	| GET	| READ | get a single user by id |
-| /users | POST | CREATE | add an user |
-| /users/id |	PUT |	UPDATE | update an user |
-| /users/id	| DELETE | DELETE | delete an user |
+| /users | POST | CREATE | add new user |
+| /users/id |	PUT |	UPDATE | update existing user |
+| /users/id	| DELETE | DELETE | delete user |
