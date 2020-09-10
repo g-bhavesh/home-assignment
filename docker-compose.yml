@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./src
+    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    volumes:
+      - ./src/:/usr/src/app/
+    ports:
+      - 8002:8000
+    environment:
+      - DB_URL=postgresql://root:root@db/users_data
+  db:
+    image: postgres:12.4
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=users_data
+
+volumes:
+  postgres_data:
